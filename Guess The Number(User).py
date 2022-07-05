@@ -8,7 +8,7 @@ def guess(limit):
     lower_limit = 1
     answer = ""
     while answer != "yes":
-        answer = input(f"Is the number you chose {guess}? If not should I guess higher or lower? Please answer with 'yes', 'higher' or 'lower' ")
+        answer = input(f"Is the number you chose {guess}? If not should I guess higher or lower? Please answer with 'yes', 'higher' or 'lower' ").lower()
         if answer == "higher":
             lower_limit = guess
             guess = random.randint(lower_limit, limit)
