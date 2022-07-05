@@ -10,10 +10,16 @@ def guess(limit):
     while answer != "yes":
         answer = input(f"Is the number you chose {guess}? If not should I guess higher or lower? Please answer with 'yes', 'higher' or 'lower' ").lower()
         if answer == "higher":
-            lower_limit = guess
-            guess = random.randint(lower_limit, limit)
+            lower_limit = guess + 1
+            if lower_limit != limit:
+                guess = random.randint(lower_limit, limit)
+            else:
+                guess = lower_limit
         elif answer == "lower":
-            limit = guess
-            guess = random.randint(lower_limit, limit)            
+            limit = guess - 1
+            if lower_limit != limit:
+                guess = random.randint(lower_limit, limit)
+            else:
+                guess = lower_limit          
     print(f"I knew I could guess the number you chose. I didn't think you would choose {guess} though.")
 guess(limit)
